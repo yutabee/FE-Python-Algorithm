@@ -9,11 +9,12 @@ def euclidean_algorithm(a: int, b: int) -> int:
     Returns:
         a, b の最大公約数
     """
-    while b != 0:
+    if b == 0:
+        print(f"{a}")
+        return a
+    else:
         print(f"{a} ÷ {b} = {a // b} 余り {a % b}")
-        a, b = b, a % b
-    print(f"{a} ÷ {b} = {a}")
-    return a
+        return euclidean_algorithm(b, a % b)
 
 
 if __name__ == "__main__":
@@ -22,5 +23,3 @@ if __name__ == "__main__":
     b = int(input("b="))
     gcd = euclidean_algorithm(a, b)
     print("それらの数の最大公約数は", gcd)
-
-
