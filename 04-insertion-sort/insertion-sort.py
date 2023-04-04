@@ -13,7 +13,6 @@ def insertion_sort(arr):
         arr[j + 1] = key  # 未ソート部分の先頭要素を適切な位置に挿入
 
 # 使用例
-arr = [64, 34, 25,
- 12, 22, 11, 90]
+arr = [64, 34, 25, 12, 22, 11, 90]
 insertion_sort(arr)
 print("Sorted array is:", arr)  # Sorted array is: [11, 12, 22, 25, 34, 64, 90]と出力される
