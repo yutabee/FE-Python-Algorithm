@@ -1,7 +1,7 @@
 class Queue:
     def __init__(self, max_size):
         self.max_size = max_size
-        self.queue = [0] * max_size
+        self.queue = [None] * max_size
         self.head = 0
         self.tail = 0
 
@@ -24,6 +24,7 @@ class Queue:
             raise Exception("取り出すデータが存在しません")
         else:
             data = self.queue[self.head]
+            self.queue[self.head] = None
             self.head = (self.head + 1) % self.max_size
             return data
 
@@ -34,7 +35,7 @@ class Queue:
 if __name__ == "__main__":
     queue = Queue(6)
 
-    for i in range(6):
+    for i in range(2,9):
         queue.display_status()
         try:
             queue.enqueue(i)
