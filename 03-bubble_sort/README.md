@@ -35,3 +35,57 @@
 7. ソート済みリストの返却: ソート済みのリスト`sorted_arr`を返します。
 
 このコードは、バブルソートアルゴリズムの実装を示すだけでなく、途中経過を追跡するオプションも提供しています。これは、アルゴリズムの理解やデバッグに役立ちます。ただし、実際の運用では、途中経過の出力は不要であることが多いため、デフォルト値を`False`に設定することを検討することもできます。
+
+# 改良版バブルソート解説
+このコードは、改良版のバブルソートアルゴリズムを実装したものです。整数のリストを昇順にソートする関数 `bubble_sort_quick` を提供します。元のリストは変更されず、新しいソート済みリストが返されます。
+
+```python
+sorted_arr = arr.copy()
+```
+最初に、元のリスト `arr` をコピーして新しいリスト `sorted_arr` を作成します。これにより、元のリストが変更されないようになります。
+
+```python
+n = len(arr)
+k = 0
+```
+リストの長さ `n` を取得し、外側のループカウンタ `k` を初期化します。
+
+```python
+while k < n:
+```
+外側のループは、未ソート部分が残っている限り続けられます。
+
+```python
+swapped = True
+last_unsorted = n - 1
+```
+内側のループの前に、フラグ `swapped` を `True` に設定し、未ソート部分の最後のインデックス `last_unsorted` を設定します。
+
+```python
+while last_unsorted > k:
+```
+内側のループは、未ソート部分を逆順に走査していきます。
+
+```python
+if sorted_arr[last_unsorted - 1] > sorted_arr[last_unsorted]:
+    tmp = sorted_arr[last_unsorted]
+    sorted_arr[last_unsorted] = sorted_arr[last_unsorted - 1]
+    sorted_arr[last_unsorted - 1] = tmp
+    swapped = False
+```
+隣接する要素を比較し、左側の要素が右側の要素より大きい場合、要素を交換し、フラグ `swapped` を `False` に設定します。これにより、少なくとも1回の交換が行われたことがわかります。
+
+```python
+last_unsorted -= 1
+```
+未ソート部分の最後のインデックスをデクリメントします。
+
+```python
+if swapped:
+    k = n + 1
+else:
+    k += 1
+```
+内側のループが終了した後、フラグ `swapped` が `True` のままであれば、ソートが完了しているので、ループを終了させます。そうでなければ、外側のループカウンタ `k` をインクリメントして次の走査に移ります。
+
+最後に、ソート済みのリスト `sorted_arr` を返します。
