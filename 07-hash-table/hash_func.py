@@ -3,7 +3,8 @@ def hash(key):
     for i in key:
         if i != " ":
             h = h + ord(i)
-    return(h%1000)
+    return(h % 1000)
+
 
 print("文字列をハッシュ値に変換します")
 print("何も入力しないと終了します")
