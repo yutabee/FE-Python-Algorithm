@@ -21,16 +21,16 @@ disable=
   bad-continuation,
   invalid-name
 
-; [BASIC]
-; good-names=i,j,k,ex,Run,_,n,m
-; bad-names=foo,bar,baz,toto,tutu,tata
-; name-length=0
-; function-name-hint=[a-z_][a-z0-9_]{2,30}$
-; variable-name-hint=[a-z_][a-z0-9_]{2,30}$
-; attr-name-hint=[a-z_][a-z0-9_]{2,30}$
-; argument-name-hint=[a-z_][a-z0-9_]{2,30}$
-; method-name-hint=[a-z_][a-z0-9_]{2,30}$
-; module-name-hint=[a-z_][a-z0-9_]{2,30}$
+[BASIC]
+good-names=i,j,k,ex,Run,_,n,m
+bad-names=foo,bar,baz,toto,tutu,tata
+name-length=0
+function-name-hint=[a-z_][a-z0-9_]{2,30}$
+variable-name-hint=[a-z_][a-z0-9_]{2,30}$
+attr-name-hint=[a-z_][a-z0-9_]{2,30}$
+argument-name-hint=[a-z_][a-z0-9_]{2,30}$
+method-name-hint=[a-z_][a-z0-9_]{2,30}$
+module-name-hint=[a-z_][a-z0-9_]{2,30}$
 
 [FORMAT]
 max-line-length=100
