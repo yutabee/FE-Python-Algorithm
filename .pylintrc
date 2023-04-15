@@ -1,0 +1,50 @@
+[MASTER]
+init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
+
+[MESSAGES CONTROL]
+disable=
+  missing-module-docstring,
+  missing-class-docstring,
+  missing-function-docstring,
+  too-many-lines,
+  too-many-arguments,
+  too-many-locals,
+  too-many-branches,
+  too-many-statements,
+  too-many-return-statements,
+  too-few-public-methods,
+  too-many-public-methods,
+  too-many-instance-attributes,
+  duplicate-code,
+  cyclic-import,
+  line-too-long,
+  bad-continuation,
+  invalid-name
+
+; [BASIC]
+; good-names=i,j,k,ex,Run,_,n,m
+; bad-names=foo,bar,baz,toto,tutu,tata
+; name-length=0
+; function-name-hint=[a-z_][a-z0-9_]{2,30}$
+; variable-name-hint=[a-z_][a-z0-9_]{2,30}$
+; attr-name-hint=[a-z_][a-z0-9_]{2,30}$
+; argument-name-hint=[a-z_][a-z0-9_]{2,30}$
+; method-name-hint=[a-z_][a-z0-9_]{2,30}$
+; module-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+[FORMAT]
+max-line-length=100
+indent-string="    "
+
+[DESIGN]
+min-public-methods=0
+max-public-methods=100
+
+[SIMILARITIES]
+min-similarity-lines=4
+
+[LOGGING]
+logging-modules=logging
+
+[MISCELLANEOUS]
+notes=FIXME,XXX,TODO
