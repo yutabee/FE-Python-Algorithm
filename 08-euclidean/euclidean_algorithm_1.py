@@ -22,5 +22,3 @@ if __name__ == "__main__":
     b = int(input("b="))
     gcd = euclidean_algorithm(a, b)
     print("それらの数の最大公約数は", gcd)
-
-
