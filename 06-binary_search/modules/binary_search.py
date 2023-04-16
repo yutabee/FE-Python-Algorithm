@@ -2,31 +2,29 @@ from typing import List
 
 
 def binary_search(arr: List[int], target: int) -> int:
-    """二分探索アルゴリズムを使用して、ソートされた整数リスト内の目的の値のインデックスを返します。
+    low: int = 0
+    high: int = len(arr) - 1
+    mid: int
 
-    この関数は、ソートされた整数リストに対して二分探索アルゴリズムを実行し、
-    目的の値が見つかった場合にそのインデックスを返します。目的の値がリスト内に
-    存在しない場合は -1 を返します。
+    while low <= high:
+        mid = (low + high) // 2
 
-    Args:
-        arr (List[int]): ソートされた整数リスト。
-        target (int): 探索する整数。
-
-    Returns:
-        int: 目的の値のインデックス（存在する場合）または -1（存在しない場合）。
-    """
-    left = 0
-    right = len(arr) - 1
-
-    while left <= right:
-        mid = (left + right) // 2
-        mid_value = arr[mid]
-
-        if mid_value == target:
+        if arr[mid] == target:
             return mid
-        elif mid_value < target:
-            left = mid + 1
+        elif arr[mid] < target:
+            low = mid + 1
         else:
-            right = mid - 1
+            high = mid - 1
 
     return -1
+
+
+if __name__ == "__main__":
+    arr = [1, 3, 5, 7, 9, 11, 13, 15, 17]
+    target = 11
+
+    result = binary_search(arr, target)
+    if result != -1:
+        print(f"要素 {target} はインデックス {result} にあります。")
+    else:
+        print(f"要素 {target} はリスト内に存在しません。")
