@@ -20,6 +20,7 @@ disable=
   line-too-long,
   invalid-name,
   superfluous-parens,
+  W0621,
 
 [BASIC]
 good-names=i,j,k,ex,Run,_,n,m
