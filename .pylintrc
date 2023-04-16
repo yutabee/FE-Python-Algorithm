@@ -18,7 +18,8 @@ disable=
   duplicate-code,
   cyclic-import,
   line-too-long,
-  invalid-name
+  invalid-name,
+  superfluous-parens,
 
 [BASIC]
 good-names=i,j,k,ex,Run,_,n,m
