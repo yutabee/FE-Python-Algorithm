@@ -1,7 +1,7 @@
 """
 main
 """
-from modules.bubble_sort import bubble_sort
+# from modules.bubble_sort import bubble_sort
 from modules.bubble_sort_quick import bubble_sort_quick
 
 
