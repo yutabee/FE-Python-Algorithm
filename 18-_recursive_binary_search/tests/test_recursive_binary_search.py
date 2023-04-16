@@ -1,4 +1,5 @@
 import unittest
+# pylint: disable=E0401, E0611
 from modules.recursive_binary_search import recursive_binary_search
 
 
