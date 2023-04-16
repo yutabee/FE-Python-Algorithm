@@ -22,7 +22,7 @@ def sentinel_linear_search(arr: List[int], target: int) -> int:
     while arr[i] != target:  # ターゲットが一致しなければインクリメント
         i += 1
     arr.pop()  # 番兵を取り出す
-    
+
     if i < len(arr):
         return i
     return -1
