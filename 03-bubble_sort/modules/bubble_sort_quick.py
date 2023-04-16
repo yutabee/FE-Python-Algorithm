@@ -34,7 +34,7 @@ def bubble_sort_quick(arr: List[int]) -> List[int]:
                 # 交換が一度でも発生すれば(swapped = False)
                 swapped = False
             last_unsorted -= 1
-        
+
         # 最後まで交換が発生しなければ(swapped == True)で強制終了
         if swapped:
             k = n + 1  # 終了条件
