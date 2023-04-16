@@ -23,7 +23,7 @@ def recursive_binary_search(
 
 
 if __name__ == "__main__":
-    data = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]
-    data.sort()
-    a = recursive_binary_search(data, 75, 0, len(data)-1)
+    input_data = [15, 25, 35, 45, 55, 65, 75, 85, 95, 105]
+    input_data.sort()
+    a = recursive_binary_search(input_data, 75, 0, len(input_data)-1)
     print(a)
