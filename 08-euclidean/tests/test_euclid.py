@@ -1,5 +1,5 @@
 import unittest
-# from modules.euclid import euclid
+from modules.euclid import euclid
 
 
 class TestEuclid(unittest.TestCase):
