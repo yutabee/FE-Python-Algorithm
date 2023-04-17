@@ -1,10 +1,10 @@
 import random
 
 
-def quick_sort(data, left, right):
-    i = left  # left_index
-    j = right  # right_index
-    pivot = (left+right)//2  # 軸
+def quick_sort(data, min, max):  # pylint: disable=W0622
+    i = min  # min_index
+    j = max  # max_index
+    pivot = (min+max)//2  # 軸
     # ソート対象のインデックスを探索
     while True:
         while data[i] < data[pivot]:
@@ -22,14 +22,14 @@ def quick_sort(data, left, right):
         i = i + 1
         j = j - 1
     # 再帰処理
-    if left < i-1:
-        quick_sort(data, left, i-1)
-    if right > j+1:
-        quick_sort(data, j+1, right)
+    if min < i-1:
+        quick_sort(data, min, i-1)
+    if max > j+1:
+        quick_sort(data, j+1, max)
 
 
 if __name__ == "__main__":
-    n = 6
+    n = 10
     data = [0] * n
     for i in range(n):
         data[i] = random.randint(1, 99)
