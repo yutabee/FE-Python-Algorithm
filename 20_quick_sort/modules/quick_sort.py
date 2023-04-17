@@ -1,30 +1,38 @@
 import random
-n = 15
-data = [0]*n
-for i in range(n):
-    data[i] = random.randint(1, 99)
 
 
-def quick_sort(left, right):
-    i = left
-    j = right
-    p = data[(left+right)//2]
+def quick_sort(data, left, right):
+    i = left  # left_index
+    j = right  # right_index
+    pivot = (left+right)//2  # 軸
+    # ソート対象のインデックスを探索
     while True:
-        while data[i] < p:
+        while data[i] < data[pivot]:
             i = i + 1
-        while data[j] > p:
+        while data[j] > data[pivot]:
             j = j - 1
+        # 無限ループ終了条件
         if i >= j:
             break
-        data[i], data[j] = data[j], data[i]
+        # 交換
+        tmp = data[i]
+        data[i] = data[j]
+        data[j] = tmp
+        # 範囲を一つ狭める
         i = i + 1
         j = j - 1
+    # 再帰処理
     if left < i-1:
-        quick_sort(left, i-1)
+        quick_sort(data, left, i-1)
     if right > j+1:
-        quick_sort(j+1, right)
+        quick_sort(data, j+1, right)
 
 
-print(data, "元のデータ")
-quick_sort(0, n-1)
-print(data, "ソート後のデータ")
+if __name__ == "__main__":
+    n = 6
+    data = [0] * n
+    for i in range(n):
+        data[i] = random.randint(1, 99)
+    print(data, "元のデータ")
+    quick_sort(data, 0, n-1)
+    print(data, "ソート後のデータ")
