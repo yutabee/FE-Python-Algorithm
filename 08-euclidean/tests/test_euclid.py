@@ -1,5 +1,5 @@
 import unittest
-from euclid import euclid  # pylint: disable=E0401
+# from modules.euclid import euclid
 
 
 class TestEuclid(unittest.TestCase):

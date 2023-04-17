@@ -1,5 +1,4 @@
 import unittest
-# pylint: disable=E0611, E0401
 from modules.simple_hash_table import SimpleHashTable
 
 

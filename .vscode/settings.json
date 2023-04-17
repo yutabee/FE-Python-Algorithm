@@ -1,14 +1,15 @@
+[{
+  "cwd": "/Users/y.tamaru/dev/FE-Python-Algorithm",
+  "workspace": "file:///Users/y.tamaru/dev/FE-Python-Algorithm",
+  "path":["FE-Python-Algorithm/19_simple_hash_table/modules",],
+},
 {
-    "python.analysis.typeCheckingMode": "basic",
-    "python.testing.unittestEnabled": true,
-    "python.testing.unittestArgs": [
-        "-v",
-        "-s",
-        "./",
-        "-p",
-        "*test*.py"
-    ],
-    "python.testing.pytestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
-    "python.testing.autoTestDiscoverOnSaveEnabled": true
-}
+  "python.analysis.typeCheckingMode": "basic",
+  "python.testing.unittestEnabled": true,
+  "python.testing.unittestArgs": ["-v", "-s", "./", "-p", "test*.py"],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.autoComplete.extraPaths": ["/path/to/your/custom/module/directory"],
+  "python.analysis.extraPaths": ["/path/to/your/custom/module/directory"]
+}]
