@@ -18,7 +18,7 @@ def create_dimension_table(rows: int, cols: int) -> None:
     # print table
     for i in range(rows):
         for j in range(cols):
-            print(f"{dimension[rows - 1 - i][cols -1 - j]:2}", end=" ")  # 反転
+            print(f"{dimension[rows-1-i][cols-1-j]:2}", end=" ")  # 反転
         print()
 
 
