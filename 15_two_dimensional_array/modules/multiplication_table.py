@@ -15,7 +15,7 @@ class MultiplicationTable:
     y : int
         The number of columns in the table.
     """
-    
+
     def __init__(self, x: int, y: int):
         """
         Initializes the MultiplicationTable instance 
@@ -30,7 +30,7 @@ class MultiplicationTable:
         """
         self.x = x
         self.y = y
-        
+
     def create_table(self) -> List[List[int]]:
         """
         Creates a multiplication table of size x by y.
@@ -41,7 +41,7 @@ class MultiplicationTable:
             A 2D list representing the multiplication table.
         """
         multi_table = [[-1] * self.y for _ in range(self.x)]
-        
+
         for row in range(self.x):
             for col in range(self.y):
                 multi_table[row][col] = (row + 1) * (col - 1)
