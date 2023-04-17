@@ -3,6 +3,7 @@ def print_matrix(matrix):
         print(row)
     print()
 
+
 def rotate_image_90_degrees(image):
     n = len(image)
     rotated_image = [[0] * n for _ in range(n)]
@@ -18,6 +19,7 @@ def rotate_image_90_degrees(image):
             print_matrix(rotated_image)
 
     return rotated_image
+
 
 image = [
     [0, 0, 0, 0, 0, 0, 0, 0],
