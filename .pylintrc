@@ -1,44 +1,35 @@
 [MASTER]
-init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
+indent-string='    '
 
 [MESSAGES CONTROL]
 disable=
-  missing-module-docstring,
-  missing-class-docstring,
-  missing-function-docstring,
-  too-many-lines,
-  too-many-arguments,
-  too-many-locals,
-  too-many-branches,
-  too-many-statements,
-  too-many-return-statements,
-  too-few-public-methods,
-  too-many-public-methods,
-  too-many-instance-attributes,
-  duplicate-code,
-  cyclic-import,
-  line-too-long,
-  invalid-name,
-  superfluous-parens,
-  W0621,
-
-[BASIC]
-good-names=i,j,k,ex,Run,_,n,m
-bad-names=foo,bar,baz,toto,tutu,tata
+    C0111,  # Missing module docstring
+    C0103,  # Variable name doesn't conform to snake_case naming style
+    W0703,  # Catching too general exception
+    R1710,  # Inconsistent return statement
+    R0903,  # Too few public methods
+    W0622,  # Redefining built-in
 
 [FORMAT]
 max-line-length=100
-indent-string="    "
 
 [DESIGN]
+max-args=6
+max-locals=15
+max-returns=6
+max-branchs=12
+max-statements=50
+max-parents=7
+max-attributes=7
 min-public-methods=0
-max-public-methods=100
+max-public-methods=20
+
+[TYPECHECK]
+ignore-missing-imports=yes
+
+[REPORTS]
+output-format=colorized
+reports=no
 
 [SIMILARITIES]
-min-similarity-lines=4
-
-[LOGGING]
-logging-modules=logging
-
-[MISCELLANEOUS]
-notes=FIXME,XXX,TODO
+min-similarity-lines=10
