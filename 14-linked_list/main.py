@@ -1,4 +1,4 @@
-from linked_list import LinkedList
+from modules.linked_list import LinkedList
 
 
 linked_list = LinkedList(5)
