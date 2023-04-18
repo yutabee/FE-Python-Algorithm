@@ -1,15 +1,18 @@
-[{
-  "cwd": "/Users/y.tamaru/dev/FE-Python-Algorithm",
-  "workspace": "file:///Users/y.tamaru/dev/FE-Python-Algorithm",
-  "path":["FE-Python-Algorithm/19_simple_hash_table/modules",],
-},
 {
-  "python.analysis.typeCheckingMode": "basic",
-  "python.testing.unittestEnabled": true,
-  "python.testing.unittestArgs": ["-v", "-s", "./", "-p", "test*.py"],
-  "python.testing.autoTestDiscoverOnSaveEnabled": true,
-  "python.linting.pylintEnabled": true,
+  "editor.formatOnSave": true,
   "python.linting.enabled": true,
-  "python.autoComplete.extraPaths": ["/path/to/your/custom/module/directory"],
-  "python.analysis.extraPaths": ["/path/to/your/custom/module/directory"]
-}]
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins",
+    "pylint.extensions.mccabe",
+    "--max-complexity",
+    "10"
+  ],
+  "python.formatting.autopep8Args": ["--max-line-length", "100"],
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on"
+}
