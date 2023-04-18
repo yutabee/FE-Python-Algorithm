@@ -19,7 +19,7 @@
 ## 使い方
 
 ```python
-from linkedlist import LinkedList
+from linked_list import LinkedList
 
 linked_list = LinkedList(5)  # 最大サイズ 5 のリンクリストを作成
 for i in range(10, 70, 10):
