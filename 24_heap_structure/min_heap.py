@@ -4,16 +4,19 @@ class MinHeap:
 
     def insert(self, value):
         self.heap.append(value)
-        index = len(self.heap) - 1  # index of the last element
+        # 追加した要素のインデックスを取得
+        index = len(self.heap) - 1
         while index > 0:
-            parent = (index - 1) // 2  # *index of the parent*
+            # 親要素のインデックス
+            parent = (index - 1) // 2
+            # 親要素の方が小さければbreak
             if self.heap[parent] <= self.heap[index]:
-                break  # if the parent is smaller than the current element
-            # exchange the value
+                break
+            # 交換
             tmp = self.heap[parent]
             self.heap[parent] = self.heap[index]
             self.heap[index] = tmp
-            # update the index to the parent
+            # 操作対象のインデックスを上書き
             index = parent
 
     def find_min(self):
@@ -22,31 +25,38 @@ class MinHeap:
         return self.heap[0]
 
     def extract_min(self):
+        # ヒープが空の場合
         if not self.heap:
             return None
+        # ヒープの最小値を取り出す
         min_value = self.heap[0]
-        self.heap[0] = self.heap[-1]
+        # ヒープの最後の要素を最初に入れる
+        self.heap[0] = self.heap[len(self.heap) - 1]
+        # 最後の要素を取り除く
         self.heap.pop()
 
+        # ヒープを再構築
         index = 0
         while True:
-            left_child = 2 * index + 1
-            right_child = 2 * index + 2
+            left = 2 * index + 1
+            right = 2 * index + 2
             smallest = index
-
-            if left_child < len(self.heap) and self.heap[left_child] < self.heap[smallest]:
-                smallest = left_child
-            if right_child < len(self.heap) and self.heap[right_child] < self.heap[smallest]:
-                smallest = right_child
-
+            # 子要素が存在する　and 子要素の方が小さければ -> インデックス交換
+            if left < len(self.heap) and self.heap[left] < self.heap[smallest]:
+                smallest = left
+            if right < len(self.heap) and self.heap[right] < self.heap[smallest]:
+                smallest = right
+            # 交換されなければbreak
             if smallest == index:
                 break
-            # exchange the value
+            # 交換
             tmp = self.heap[smallest]
             self.heap[smallest] = self.heap[index]
             self.heap[index] = tmp
+            # 操作対象のインデックスを上書き
             index = smallest
 
+        # 最小の要素を返す
         return min_value
 
 
